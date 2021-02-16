@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @font-face {
+  font-family: "iCielMedium";
+  src: local("iCielMedium"), url("./fonts/iCiel-Medium.ttf") format("truetype");
+  font-weight: unset;
+}
+
+body {
+  font-family: "iCielMedium";
+} */

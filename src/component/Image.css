@@ -1,3 +1,7 @@
-/* .img__ {
+.img__ {
   object-fit: cover;
-} */
+}
+
+.showcase {
+  scroll-snap-align: start;
+}

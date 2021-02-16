@@ -1,48 +1,31 @@
 import React from "react";
 import "./Image.css";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import "react-awesome-slider/dist/custom-animations/cube-animation.css";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import image1 from "./../Images/1.jpg";
-import image2 from "./../Images/2.jpg";
-import image3 from "./../Images/3.png";
-
-function Image() {
+function Image({ img, dropIcon, comment }) {
   return (
-    <div className="w-full z-0 h-full ">
-      {/* <img className="h-screen w-full img__" src={image1} alt="3d" /> */}
-      <AwesomeSlider
-        bullets={false}
-        fillParent={true}
-        className="h-screen w-full"
-        animation="cubeAnimation"
-      >
-        <div
-          data-src={image1}
-          className="w-full h-full flex flex-row justify-center items-end"
-        >
-          <p className="hover:bg-red-700 duration-700 bg-gray-800 select-none text-white font-bold font-mono rounded-full opacity-70 px-5 py-3 text-2xl m-16 shadow-xl">
-            The explorer - Exploring the earth
-          </p>
+    <div
+      className="showcase h-screen flex flex-col-reverse justify-start items-center"
+      style={{
+        scrollSnapAlign: "start",
+        backgroundImage: `url(${img})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      {dropIcon && (
+        <div className="">
+          {" "}
+          <ExpandMoreIcon
+            style={{ width: "3rem", height: "3rem" }}
+            className="text-white p-15 opacity-60 animate-bounce "
+          />
         </div>
-        <div
-          data-src={image2}
-          className="w-full h-full flex flex-row justify-center items-end"
-        >
-          <p className="hover:bg-red-700 duration-700 bg-gray-800 select-none text-white font-bold font-mono rounded-full opacity-70 px-5 py-3 text-2xl m-16 shadow-xl">
-            Gifted by Alien from another universe
-          </p>
-        </div>
-        <div
-          data-src={image3}
-          className="w-full h-full flex flex-row justify-center items-end"
-        >
-          <p className="hover:bg-red-700 duration-700 bg-gray-800 select-none text-white font-bold font-mono rounded-full opacity-70 px-5 py-3 text-2xl m-16 shadow-xl">
-            The explorer - Exploring the earth
-          </p>
-        </div>
-      </AwesomeSlider>
+      )}
+      <p className=" hover:bg-red-400 duration-500 px-10 py-3 mb-10 bg-gray-300 opacity-90 rounded-full font-semibold text-black">
+        {comment}
+      </p>
     </div>
   );
 }
